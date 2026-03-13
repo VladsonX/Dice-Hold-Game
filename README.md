@@ -1,6 +1,6 @@
 # 🎲 Dice Duel (Advanced Pig Game)
 
-[![Live Demo](https://vladsonx.github.io/Dice-Hold-Game/)]()
+[![Live Demo](https://img.shields.io/badge/Play-Live_Demo-success?style=for-the-badge)](https://vladsonx.github.io/Dice-Hold-Game/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
 [![CSS3](https://img.shields.io/badge/CSS3-Custom_UI-1572B6?style=for-the-badge&logo=css3&logoColor=white)]()
 
