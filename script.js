@@ -21,13 +21,10 @@ const btnNew = document.querySelector('.btn--new');
 const btnHold = document.querySelector('.btn--hold');
 const btnRoll = document.querySelector('.btn--roll');
 const btnQuit = document.querySelector('.btn--quit');
-
-// Menu
 const menu = document.querySelector('#menu');
 const playground = document.querySelector('#playground');
 const logInForm = document.querySelector('#logIn');
 logInForm.addEventListener('submit', newGame);
-//
 
 const scores = [];
 let currentScore;
@@ -151,6 +148,7 @@ document.addEventListener('keydown', e => {
       break;
     case 'Escape':
       if (playing) quitGame();
+      break;
   }
 });
 
@@ -194,5 +192,3 @@ function newGame(e) {
   activePlayerIndex = 0;
   players[activePlayerIndex].section.classList.add('player--active');
 }
-
-// Menu

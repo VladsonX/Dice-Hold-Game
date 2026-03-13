@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 :root {
   --primary-bg-color: #f5f2f2;
   --primary-accent-color: #feb05d;
@@ -19,7 +17,7 @@ html {
 }
 
 body {
-  font-family: 'Press Start 2P', system-ui;
+  font-family: 'Comfortaa', sans-serif;
   height: 100vh;
   color: var(--primary-dark-color);
   background: var(--primary-bg-color);
@@ -28,7 +26,6 @@ body {
   justify-content: center;
 }
 
-/* LAYOUT */
 main {
   position: relative;
   width: 100rem;
@@ -57,8 +54,8 @@ main {
   transition: all 0.75s;
 }
 
-/* ELEMENTS */
 .name {
+  font-family: 'Audiowide', sans-serif;
   position: relative;
   font-size: 4rem;
   text-transform: uppercase;
@@ -69,6 +66,7 @@ main {
 }
 
 .score {
+  font-family: 'Audiowide', sans-serif;
   font-size: 8rem;
   font-weight: 300;
   color: var(--primary-accent-color);
@@ -111,7 +109,6 @@ main {
   font-size: 3.5rem;
 }
 
-/* ABSOLUTE POSITIONED ELEMENTS */
 .btn {
   position: absolute;
   left: 50%;
@@ -251,8 +248,6 @@ main {
   animation: rotate ease-in 0.5s;
 }
 
-/* Main menu */
-
 .menu {
   width: 100%;
   min-height: 100%;
@@ -290,6 +285,7 @@ main {
   font-size: 1.25rem;
 }
 .menu__title {
+  font-family: 'Audiowide', sans-serif;
   font-size: 8rem;
   font-weight: 900;
   color: var(--primary-accent-color);
@@ -311,6 +307,8 @@ main {
 }
 
 .menu__label {
+  color: var(--primary-bg-color);
+  font-family: 'Audiowide', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -327,7 +325,7 @@ main {
 }
 
 .menu__input:focus {
-  outline: 2px solid gold;
+  outline: 2px solid var(--primary-accent-color);
 }
 
 .dice-wrapper .dice {
