@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root {
+  --primary-bg-color: #f5f2f2;
+  --primary-accent-color: #feb05d;
+  --primary-active-color: #5a7acd;
+  --primary-nonactive-color: #3c5289;
+  --primary-dark-color: #2b2a2a;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', system-ui;
+  height: 100vh;
+  color: var(--primary-dark-color);
+  background: var(--primary-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: var(--primary-nonactive-color);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.playground {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: var(--primary-accent-color);
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: var(--primary-active-color);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: var(--primary-accent-color);
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: var(--primary-dark-color);
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: var(--primary-bg-color);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn--quit {
+  top: 4rem;
+}
+
+.btn--new {
+  top: 10rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+  width: 100%;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(720deg) scale(1.5);
+  }
+  75% {
+    transform: rotate(1080deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(1440deg) scale(1);
+  }
+}
+
+.dice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+  border-radius: 15%;
+  padding: 1rem;
+  transition: 0.5s all ease-in-out;
+  transform: rotate(-720deg);
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  translate: -50%;
+}
+
+.dice_menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  translate: 0;
+}
+
+.dice__row {
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dice__dot {
+  display: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.dice-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  gap: 3rem;
+  width: 45%;
+  height: 100%;
+}
+
+.center {
+  justify-content: center;
+}
+.display {
+  display: block;
+}
+.end {
+  justify-content: flex-end;
+}
+
+.dnone {
+  display: none;
+}
+
+.rotate {
+  animation: rotate ease-in 0.5s;
+}
+
+/* Main menu */
+
+.menu {
+  width: 100%;
+  min-height: 100%;
+  padding: 3rem;
+}
+
+.menu__entered-name {
+  color: var(--primary-accent-color);
+}
+
+.menu__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.menu__login-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu__descr {
+  color: var(--primary-bg-color);
+  font-size: 1.25rem;
+}
+.menu__title {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary-accent-color);
+}
+
+.menu__logIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+  gap: 2rem;
+  color: var(--primary-bg-color);
+}
+
+.menu__player-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu__label {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.menu__input {
+  transition: 0.3s all ease-in-out;
+  background-color: var(--primary-bg-color);
+  border-radius: 10px;
+  border: 1px solid;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Comfortaa', system-ui;
+  font-weight: 700;
+}
+
+.menu__input:focus {
+  outline: 2px solid gold;
+}
+
+.dice-wrapper .dice {
+  animation: infinite rotate-menu 1s ease-in-out;
+}
+
+@keyframes rotate-menu {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(0, -10px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0px) scale(1);
+  }
+}
+
+.button {
+  transition: 0.3s all ease-in-out;
+  padding: 0.5rem 1rem;
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 1rem;
+  transition: 0.2s all ease;
+  margin: 0 auto;
+  width: 15rem;
+  height: 4rem;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.button_play {
+  background-color: var(--primary-bg-color);
+}
+.button_play:hover {
+  background-color: var(--primary-accent-color);
+}
